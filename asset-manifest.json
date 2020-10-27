@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/projeto-avoa/static/css/main.72341a11.chunk.css",
+    "main.js": "/projeto-avoa/static/js/main.c06eac95.chunk.js",
+    "main.js.map": "/projeto-avoa/static/js/main.c06eac95.chunk.js.map",
+    "runtime-main.js": "/projeto-avoa/static/js/runtime-main.0cfcb33e.js",
+    "runtime-main.js.map": "/projeto-avoa/static/js/runtime-main.0cfcb33e.js.map",
+    "static/js/2.e7e46dfa.chunk.js": "/projeto-avoa/static/js/2.e7e46dfa.chunk.js",
+    "static/js/2.e7e46dfa.chunk.js.map": "/projeto-avoa/static/js/2.e7e46dfa.chunk.js.map",
+    "index.html": "/projeto-avoa/index.html",
+    "precache-manifest.e9acd0d10154b5a361c013243577d27e.js": "/projeto-avoa/precache-manifest.e9acd0d10154b5a361c013243577d27e.js",
+    "service-worker.js": "/projeto-avoa/service-worker.js",
+    "static/css/main.72341a11.chunk.css.map": "/projeto-avoa/static/css/main.72341a11.chunk.css.map",
+    "static/js/2.e7e46dfa.chunk.js.LICENSE.txt": "/projeto-avoa/static/js/2.e7e46dfa.chunk.js.LICENSE.txt",
+    "static/media/foto1.jpg": "/projeto-avoa/static/media/foto1.2acde4df.jpg",
+    "static/media/foto10.jpg": "/projeto-avoa/static/media/foto10.fcd0aaf5.jpg",
+    "static/media/foto11.jpg": "/projeto-avoa/static/media/foto11.349ca3fb.jpg",
+    "static/media/foto12.jpg": "/projeto-avoa/static/media/foto12.87f096c4.jpg",
+    "static/media/foto13.jpg": "/projeto-avoa/static/media/foto13.85cd7f30.jpg",
+    "static/media/foto14.jpg": "/projeto-avoa/static/media/foto14.bfb470c2.jpg",
+    "static/media/foto15.jpg": "/projeto-avoa/static/media/foto15.762babe1.jpg",
+    "static/media/foto16.jpg": "/projeto-avoa/static/media/foto16.bd0c39ab.jpg",
+    "static/media/foto17.jpg": "/projeto-avoa/static/media/foto17.06a14e3f.jpg",
+    "static/media/foto18.jpg": "/projeto-avoa/static/media/foto18.3e9934a9.jpg",
+    "static/media/foto2.jpg": "/projeto-avoa/static/media/foto2.ab208622.jpg",
+    "static/media/foto3.jpg": "/projeto-avoa/static/media/foto3.66d7813f.jpg",
+    "static/media/foto4.jpg": "/projeto-avoa/static/media/foto4.42d4cb01.jpg",
+    "static/media/foto5.jpg": "/projeto-avoa/static/media/foto5.8e6f6d5d.jpg",
+    "static/media/foto6.jpg": "/projeto-avoa/static/media/foto6.fdc45311.jpg",
+    "static/media/foto7.jpg": "/projeto-avoa/static/media/foto7.b7a9a3b2.jpg",
+    "static/media/foto8.jpg": "/projeto-avoa/static/media/foto8.d8688197.jpg",
+    "static/media/foto9.jpg": "/projeto-avoa/static/media/foto9.b9df9b29.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cfcb33e.js",
+    "static/js/2.e7e46dfa.chunk.js",
+    "static/css/main.72341a11.chunk.css",
+    "static/js/main.c06eac95.chunk.js"
+  ]
+}
