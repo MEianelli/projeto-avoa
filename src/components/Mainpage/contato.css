@@ -1,0 +1,68 @@
+.cores {
+  background-color: #eca766ff;
+  background-color: #e49d7fff;
+  background-color: #794c2dff;
+  background-color: #d3902fff;
+  background-color: #fff9d7ff;
+}
+
+.contatoWrap {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.contatoWrap input,
+.contatoWrap textarea {
+  box-sizing: border-box;
+  font-family: inherit;
+  border: 1px solid #794c2dff;
+  outline: 0;
+  color: #794c2dff;
+  font-size: 1.3em;
+  background: white;
+  border-radius: 8px;
+  margin: 15px 5px;
+  padding-left: 7px;
+  box-shadow: 2px 2px 4px #794c2dff;
+}
+#name,
+#sobrenome {
+  width: 350px;
+  height: 50px;
+}
+#email {
+  width: 710px;
+  height: 50px;
+}
+#msg {
+  padding-top: 10px;
+  width: 710px;
+  height: 200px;
+  resize: none;
+  line-height: 20px;
+}
+
+.botaoDeEnviar {
+  margin: auto;
+  cursor: pointer;
+  line-height: 50px;
+  color: white;
+  font-size: 1.2em;
+  border: 0;
+  width: 150px;
+  height: 50px;
+  background-color: #d3902fff;
+  border-radius: 50px 5px 50px 15px;
+  border: 1px solid #794c2dff;
+  box-shadow: 2px 2px 4px #794c2dff;
+}
+.botaoDeEnviar:hover {
+  background-color: #e49d7fff;
+}
+
+.botaoDeEnviar:active {
+  background-color: #e49d7fff;
+  width: 170px;
+  height: 55px;
+  font-size: 1.4em;
+}

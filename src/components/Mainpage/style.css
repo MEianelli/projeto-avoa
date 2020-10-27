@@ -1,0 +1,33 @@
+/* CSS HEX 
+--cornsilk: #fff9d7ff;
+--harvest-gold: #d3902fff;
+--russet: #794c2dff;
+--dark-salmon: #e49d7fff;
+--sandy-brown: #eca766ff; */
+
+.mainWraper {
+  width: 1400px;
+  height: 100vh;
+  background-color: #fff9d7ff;
+  box-shadow: 0 0 25px #eca766ff;
+}
+
+.topNavBarWraper {
+  height: 6vh;
+  background-color: #d29032;
+}
+
+.mainContentWraper {
+  height: 94vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mainContent {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff9d7ff;
+  z-index: 1;
+}

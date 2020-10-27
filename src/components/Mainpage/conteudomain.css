@@ -1,0 +1,77 @@
+.mensagemDoDiaWraper {
+  height: 20vh;
+}
+.mensagemDoDiaP {
+  color: #e49d7fff;
+  font-size: 3vh;
+}
+
+.bannerWraper {
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px #794c2dff;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  box-sizing: border-box;
+  display: none;
+}
+
+.bannerWraper,
+.overlayCards,
+.bannerImg {
+  cursor: pointer;
+  border-radius: 15px 50px 5px 50px;
+  height: 50vh;
+}
+.bannerImg {
+  float: left;
+  width: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.bannerWraper:hover .overlayCards {
+  opacity: 1;
+}
+
+.overlayCards {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  line-height: 50vh;
+  font-size: 2em;
+  color: white;
+  background-color: #000000bb;
+  opacity: 0;
+  transition: opacity 0.7s;
+  z-index: 1;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

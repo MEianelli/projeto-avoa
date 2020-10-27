@@ -1,0 +1,98 @@
+.topNavIcons {
+  font-size: 3vh;
+  float: left;
+  color: white;
+  cursor: pointer;
+  width: 60px;
+}
+.topNavIconsP {
+  text-align: left;
+  margin: 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  line-height: 6vh;
+  width: 60px;
+  float: left;
+}
+.topNavText {
+  overflow: hidden;
+  width: 0;
+  line-height: 6vh;
+  margin: 0;
+  float: left;
+}
+
+.topNavLogo {
+  height: 100%;
+  float: left;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 95px;
+  margin-right: 140px;
+  margin-left: 47%;
+  position: relative;
+}
+.about {
+  text-align: center;
+  height: 100%;
+  width: 95px;
+  line-height: 6vh;
+  margin: 0;
+  font-size: 3vh;
+  color: white;
+  position: absolute;
+  opacity: 0;
+}
+.logo {
+  height: 6vh;
+  float: left;
+}
+
+.topNavLogo:hover .about {
+  opacity: 1;
+}
+
+.topNavLogo:hover .logo {
+  opacity: 0;
+}
+
+.topNavLogo:active {
+  background-color: #794c2dff;
+}
+
+/* .topNavLogo:hover {
+    animation: corLogo 0.7s forwards;
+  }
+  @keyframes corLogo {
+    0% {
+      background-color: #d29032;
+    }
+    100% {
+      background-color: #794c2dff;
+    }
+  } */
+@keyframes aumentarWraper {
+  0% {
+    width: 60px;
+    background-color: #d29032;
+  }
+  100% {
+    width: 180px;
+    background-color: #794c2dff;
+  }
+}
+@keyframes aumentarTexto {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 120px;
+  }
+}
+.topNavIcons:hover {
+  animation: aumentarWraper 0.7s forwards;
+}
+
+.topNavIcons:hover .topNavText {
+  animation: aumentarTexto 0.7s forwards;
+}

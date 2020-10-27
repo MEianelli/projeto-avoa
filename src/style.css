@@ -1,0 +1,22 @@
+.cores {
+  background-color: #eca766ff;
+  background-color: #e49d7fff;
+  background-color: #794c2dff;
+  background-color: #d3902fff;
+  background-color: #fff9d7ff;
+}
+* {
+  -webkit-user-select: none; /* Chrome/Safari */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #fff9d755;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
