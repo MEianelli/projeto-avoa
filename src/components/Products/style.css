@@ -47,6 +47,7 @@
   color: white;
   line-height: 6vh;
   cursor: pointer;
+  position: relative;
 }
 .productNavLogo {
   height: 6vh;
@@ -56,12 +57,16 @@
   background-color: #794c2dff;
 }
 
+.cartIcon {
+  position: relative;
+}
+
 .productAddedWraper {
   position: absolute;
-  left: 20%;
+  left: 50px;
+  top: 6vh;
   width: 250px;
   height: 250px;
-  top: 6vh;
   display: none;
   z-index: 1;
 }
@@ -89,6 +94,8 @@
 }
 .added p {
   color: white;
+  font-size: 0.7em;
+  margin: 0;
 }
 
 .cardDeProduto {

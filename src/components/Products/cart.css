@@ -18,7 +18,7 @@
 
 .checkoutBoxWrap {
   position: absolute;
-  top: 42px;
+  top: 6vh;
   right: 0;
   margin: 10px 20px;
   width: 340px;
@@ -33,6 +33,12 @@
   height: 200px;
   box-shadow: 2px 2px 4px #794c2dff;
   padding: 40px 20px 20px 20px;
+}
+
+.checkoutBox p {
+  color: #794c2dff;
+  font-size: 1.1em;
+  text-align: center;
 }
 
 .cartItem {
@@ -67,11 +73,6 @@
   font-size: 1em;
 }
 
-.checkoutBox p {
-  color: #794c2dff;
-  font-size: 1.7em;
-  text-align: center;
-}
 .botaoCheckout {
   margin: 0 20px;
   background-color: #794c2dff;

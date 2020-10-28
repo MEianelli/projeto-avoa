@@ -19,12 +19,22 @@ export default function Products() {
     let cartOverlay = document.querySelector(".cartWraper");
     cartOverlay.style.display = "none";
   }
+
+  //funcao para previnir que quando clica nos elementos filhos do overlay, disparar o onclick do overlay
   function handleInnerClick(e) {
     e.stopPropagation();
   }
+
   function handleComprar(obj) {
     //acionar o popup adicionado e depois dar fade
-    var added = document.querySelector(".productAddedWraper");
+
+    for (let i = 0; i < cartArray.length; i++) {
+      if (cartArray[i].referencia === obj.referencia) {
+        alert("Item ja esta no carrinho");
+        return;
+      }
+    }
+    let added = document.querySelector(".productAddedWraper");
     added.style.display = "block";
     setTimeout(() => {
       added.style.display = "none";
@@ -53,10 +63,21 @@ export default function Products() {
     for (let i = 1; i < tempArray.length; i++) {
       if (tempArray[i].referencia === n) {
         if (tempArray[i].qtdP - 1 <= 0) {
-          return alert("Item sera removido do carrinho");
+          alert("Item sera removido do Carrinho");
+          removeDoCarrinho(tempArray[i]);
         } else {
           tempArray[i].qtdP -= 1;
+          setCartArray(tempArray);
         }
+      }
+    }
+  }
+
+  function removeDoCarrinho(item) {
+    let tempArray = [...cartArray];
+    for (let i = 0; i < tempArray.length; i++) {
+      if (tempArray[i].referencia === item.referencia) {
+        tempArray.splice(i, 1);
       }
     }
     setCartArray(tempArray);
@@ -87,17 +108,16 @@ export default function Products() {
 
           <div onClick={fechaOverlay} className="closeButton navDivs">
             X
+            <div className="checkoutBoxWrap">
+              <div className="checkoutBox">
+                <p>TOTAL R${totalProdutos}</p>
+
+                <div className="botaoCheckout">CHECKOUT</div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="productsNavWraperMargin"></div>
-
-        <div className="checkoutBoxWrap">
-          <div className="checkoutBox">
-            <p>TOTAL R${totalProdutos}</p>
-
-            <div className="botaoCheckout">CHECKOUT</div>
-          </div>
-        </div>
 
         {cartArray.slice(1).map(function (valor, index) {
           return (
@@ -137,7 +157,15 @@ export default function Products() {
         {/*COMECO barra de navegacao wraper*/}
         <div className="productsNavWraper">
           <div onClick={openCart} className="cartIcon navDivs">
-            <i className="fas fa-shopping-cart"></i> Cart ({cartArray.length - 1})
+            <i className="fas fa-shopping-cart"></i> Cart ({cartArray.length - 1}){/*COMECO popup quando adiciona produto*/}
+            <div className="productAddedWraper">
+              <div className="topPyramid"></div>
+              <div className="added">
+                <img src={cartArray[cartArray.length - 1].images} alt="Adicionado" />
+                <p>ADICIONADO AO CARRINHO</p>
+              </div>
+            </div>
+            {/*FIM popup quando adiciona produto*/}
           </div>
           <div className="productNavLogoDiv navDivs">
             <img src={logo} alt="logo" className="productNavLogo" />
@@ -149,16 +177,6 @@ export default function Products() {
         </div>
         <div className="productsNavWraperMargin"></div>
         {/*FIM barra de navegacao wraper*/}
-
-        {/*COMECO popup quando adiciona produto*/}
-        <div className="productAddedWraper">
-          <div className="topPyramid"></div>
-          <div className="added">
-            <img src={cartArray[cartArray.length - 1].images} alt="Adicionado" />
-            <p>ADICIONADO AO CARRINHO</p>
-          </div>
-        </div>
-        {/*FIM popup quando adiciona produto*/}
 
         {/*COMECO geracao de cards de produto*/}
         {listaDeProdutos.map(function (valor, index) {
