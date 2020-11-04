@@ -48,6 +48,13 @@ export default function Mainpage(props) {
     productWraper.classList.add("visible");
   }
 
+  function openCart() {
+    var productWraper = document.querySelector(".productsWraper");
+    productWraper.classList.add("visible");
+    let cartOverlay = document.querySelector(".cartWraper");
+    cartOverlay.style.display = "block";
+  }
+
   //Funcao para abrir tela de About
   function openAbout(i) {
     let aboutWrap = document.querySelectorAll(".aboutWraper");
@@ -113,7 +120,12 @@ export default function Mainpage(props) {
             <p className="topNavText">Whatsapp</p>
           </div>
         </a>
-        <div className="topNavIcons">
+        <div
+          onClick={() => {
+            openCart();
+          }}
+          className="topNavIcons"
+        >
           <p className="topNavIconsP">
             <i className="fas fa-shopping-cart"></i>
           </p>
@@ -123,7 +135,7 @@ export default function Mainpage(props) {
       {/*FIM da barra de navegaçao superior*/}
 
       {/*COMECO do conteudo embaixo da barra de navegacao*/}
-      <div className="mainContentWraper">
+      <div className="mainContentWraper" id="canvasWraper">
         <img src={blob_0} alt=" " id="blob_0" className="blobs" />
         <img src={blob_1} alt=" " id="blob_1" className="blobs" />
         <img src={blob_2} alt=" " id="blob_2" className="blobs" />

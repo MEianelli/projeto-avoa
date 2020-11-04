@@ -1,17 +1,30 @@
 import React from "react";
 import "./style.css";
 import "./cart.css";
+import "./pagamento.css";
+import "./banner.css";
 import logo from "../../images/logo.jpg";
 import { listaDeProdutos } from "./infoFotos.js";
+import { listaDeInputs } from "./listadeinputs.js";
+import { listaDeInputs2 } from "./listadeinputs.js";
 
 export default function Products() {
   var [cartArray, setCartArray] = React.useState([{ images: "null", precoP: 0, qtdP: 1, referencia: 0 }]);
 
+  var descontos = 0;
   var totalProdutos = 0;
+  var quantidadeTotalItens = -1; //desconsiderando  primeiro elemento null do array
   for (let i = 0; i < cartArray.length; i++) {
     totalProdutos += cartArray[i].precoP * parseInt(cartArray[i].qtdP);
+    quantidadeTotalItens += cartArray[i].qtdP;
   }
   totalProdutos = totalProdutos.toFixed(2);
+  var parcelas;
+  if (quantidadeTotalItens === 0) {
+    parcelas = "";
+  } else {
+    parcelas = "ou 3x de R$" + Math.round((totalProdutos / 3) * 1e2) / 1e2 + " sem juros";
+  }
 
   function fechaOverlay() {
     var wraper = document.querySelector(".productsWraper");
@@ -83,6 +96,25 @@ export default function Products() {
     setCartArray(tempArray);
   }
 
+  //Abrir dados de pagamento
+  function openPagamento() {
+    let bCheckout = document.querySelector(".botaoCheckout");
+    let pagaWraper = document.querySelector(".pagamentoWraper");
+    if (bCheckout.innerText === "CHECKOUT") {
+      pagaWraper.style.display = "block";
+      bCheckout.innerText = "Ver Itens";
+    } else {
+      fecharPagamento();
+    }
+  }
+
+  function fecharPagamento() {
+    let bCheckout = document.querySelector(".botaoCheckout");
+    let pagaWraper = document.querySelector(".pagamentoWraper");
+    pagaWraper.style.display = "none";
+    bCheckout.innerText = "CHECKOUT";
+  }
+
   //Abrir e fechar o overlay do Cart
   function openCart() {
     let cartOverlay = document.querySelector(".cartWraper");
@@ -94,9 +126,40 @@ export default function Products() {
     cartOverlay.style.display = "none";
   }
 
+  //Funcao para checar se todos os dados foram preenchidos
+  function checarDadosPreenchidos() {
+    let dados = document.querySelectorAll(".dadosEntrega");
+    for (let i = 0; i < dados.length; i++) {
+      if (i !== 5) {
+        if (dados[i].value === "") {
+          return alert("Favor preencher todos os campos obrigatorios");
+        }
+      }
+    }
+
+    let bannerCompra = document.querySelector(".bannerCompraFinalizada");
+    let nomeUsuario = document.querySelector(".bannerCompraFinalizada > h2 > span");
+    nomeUsuario.innerHTML = dados[0].value.split(" ")[0];
+    bannerCompra.style.display = "block";
+    setTimeout(() => {
+      bannerCompra.style.display = "none";
+      zerarCarrinho();
+    }, 3000);
+  }
+
+  function zerarCarrinho() {
+    let temp = [{ images: "null", precoP: 0, qtdP: 1, referencia: 0 }];
+    setCartArray(temp);
+    fecharPagamento();
+    fechaOverlay();
+  }
+
+  // ********************************************* INICIO HTML ****************************************
+  // ********************************************* INICIO HTML ****************************************
+  // ********************************************* INICIO HTML ****************************************
   return (
     <div onClick={fechaOverlay} className="productsWraper">
-      {/*COMECO cart */}
+      {/* COMECO DA BARRA DE NAVEGACAO */}
       <div onClick={handleInnerClick} className="cartWraper">
         <div className="productsNavWraper">
           <div onClick={closeCart} className="cartIcon navDivs">
@@ -108,16 +171,105 @@ export default function Products() {
 
           <div onClick={fechaOverlay} className="closeButton navDivs">
             X
-            <div className="checkoutBoxWrap">
-              <div className="checkoutBox">
-                <p>TOTAL R${totalProdutos}</p>
+          </div>
+        </div>
+        {/* FIM DA BARRA DE NAVEGACAO */}
 
-                <div className="botaoCheckout">CHECKOUT</div>
+        <div className="productsNavWraperMargin">
+          {/* COMECO FINALIZAR COMPRA */}
+          <div tabindex="-1" className="pagamentoWraper">
+            <div onClick={fecharPagamento} className="botaoFecharPagamento">
+              X
+            </div>
+            <h2>Entrega</h2>
+
+            <table className="pagamentoTable">
+              <tbody>
+                {listaDeInputs.map(function (valor, index) {
+                  return (
+                    <tr key={index}>
+                      <td>{valor.texto}</td>
+                      <td>
+                        <input onBlur={valor.func} className={valor.className} id={valor.id} name={valor.name} type={valor.type} maxLength={valor.maxlength} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <h2>Pagamento</h2>
+            <table className="pagamentoTable">
+              <tbody>
+                {listaDeInputs2.map(function (valor, index) {
+                  return (
+                    <tr key={index}>
+                      <td>{valor.texto}</td>
+                      <td>
+                        <input onBlur={valor.func} className={valor.className} id={valor.id} name={valor.name} type={valor.type} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <div onClick={checarDadosPreenchidos} className="botaoFinalizar">
+              FINALIZAR
+            </div>
+            <p>
+              <em>* campos obrigatorios</em>
+            </p>
+          </div>
+
+          {/* FIM FINALIZAR COMPRA */}
+          <div className="bannerCompraFinalizada">
+            <h2>
+              Muito obrigado pela compra, <span></span>
+            </h2>
+            <p>
+              <em>Sua compra foi finalizada com sucesso e seus itens serão entregues dentro do prazo informado</em>{" "}
+            </p>
+          </div>
+          {/*COMECO cart */}
+          <div className="checkoutBoxWrap">
+            <div className="checkoutBox">
+              <h2>Resumo da Compra</h2>
+
+              <table className="subtotal">
+                <tbody>
+                  <tr>
+                    <td>Qtd de itens</td>
+                    <td>{quantidadeTotalItens}</td>
+                  </tr>
+                  <tr>
+                    <td>Subtotal</td>
+                    <td>R${totalProdutos}</td>
+                  </tr>
+                  <tr>
+                    <td>Descontos</td>
+                    <td>R${descontos}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table className="total">
+                <tbody>
+                  <tr>
+                    <td>TOTAL</td>
+                    <td>R${totalProdutos - descontos}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>{parcelas}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div onClick={openPagamento} className="botaoCheckout">
+                CHECKOUT
               </div>
             </div>
           </div>
         </div>
-        <div className="productsNavWraperMargin"></div>
 
         {cartArray.slice(1).map(function (valor, index) {
           return (
@@ -157,7 +309,8 @@ export default function Products() {
         {/*COMECO barra de navegacao wraper*/}
         <div className="productsNavWraper">
           <div onClick={openCart} className="cartIcon navDivs">
-            <i className="fas fa-shopping-cart"></i> Cart ({cartArray.length - 1}){/*COMECO popup quando adiciona produto*/}
+            <i className="fas fa-shopping-cart"></i> Cart ({cartArray.length - 1})
+            {/*********************COMECO popup quando adiciona produto***************************************************************/}
             <div className="productAddedWraper">
               <div className="topPyramid"></div>
               <div className="added">

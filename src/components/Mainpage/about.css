@@ -5,6 +5,8 @@
   background-color: #d29032;
   text-align: center;
   overflow: hidden;
+  z-index: 0;
+  opacity: 0;
 }
 
 .aplicarsumirContent {
@@ -65,8 +67,8 @@
 .aboutWraper p {
   color: white;
   padding: 0 100px;
-  font-size: 1.5em;
+  font-size: 3.5vh;
 }
 .aboutWraper h2 {
-  font-size: 3em;
+  font-size: 6vh;
 }

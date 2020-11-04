@@ -1,0 +1,31 @@
+.bannerCompraFinalizada {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  background-color: #fff9d7ff;
+  height: 200px;
+  z-index: 4;
+  padding: 40px 0 10px 0;
+  font-size: 1.5em;
+  color: #794c2dff;
+  display: none;
+}
+
+.bannerCompraFinalizada p {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 800px;
+  font-size: 0.9em;
+}
+
+.bannerCompraFinalizada h2 {
+  margin: auto;
+  max-width: 800px;
+  font-size: 1.5em;
+}
+
+.bannerCompraFinalizada > h2 > span {
+  font-size: 1.55em;
+  text-shadow: 1px 1px 2px #794c2d88;
+}

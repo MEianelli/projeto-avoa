@@ -1,9 +1,10 @@
-/* CSS HEX 
---cornsilk: #fff9d7ff;
---harvest-gold: #d3902fff;
---russet: #794c2dff;
---dark-salmon: #e49d7fff;
---sandy-brown: #eca766ff; */
+.cores {
+  background-color: rgb(236, 167, 102);
+  background-color: rgb(228, 157, 127);
+  background-color: rgb(121, 76, 45);
+  background-color: rgb(211, 144, 47);
+  background-color: rgb(255, 249, 215);
+}
 
 .mainWraper {
   width: 1200px;
@@ -28,6 +29,5 @@
   width: 60%;
   height: 100%;
   position: absolute;
-  background-color: #fff9d7ff;
   z-index: 1;
 }
