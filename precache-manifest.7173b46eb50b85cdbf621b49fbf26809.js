@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7109a10cdf14ea58d25aa99a63714038",
+    "revision": "4536fd78bf199ebabb9a65f4ce7cfd27",
     "url": "/projeto-avoa/index.html"
   },
   {
-    "revision": "997351b98cd83127df89",
-    "url": "/projeto-avoa/static/css/main.72341a11.chunk.css"
+    "revision": "7f555a05905ebe076d2a",
+    "url": "/projeto-avoa/static/css/main.90ddce5f.chunk.css"
   },
   {
-    "revision": "62f38a8199ea094b9513",
-    "url": "/projeto-avoa/static/js/2.e7e46dfa.chunk.js"
+    "revision": "7458e6c86666e5a43071",
+    "url": "/projeto-avoa/static/js/2.0f1e8d0f.chunk.js"
   },
   {
     "revision": "570d362d673dab785e62d2b8563e1118",
-    "url": "/projeto-avoa/static/js/2.e7e46dfa.chunk.js.LICENSE.txt"
+    "url": "/projeto-avoa/static/js/2.0f1e8d0f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "997351b98cd83127df89",
-    "url": "/projeto-avoa/static/js/main.c06eac95.chunk.js"
+    "revision": "7f555a05905ebe076d2a",
+    "url": "/projeto-avoa/static/js/main.c082543b.chunk.js"
   },
   {
     "revision": "ea0cf21754daad1a8d73",
